@@ -72,24 +72,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client\ProgressiveForm.cs" />
-    <Compile Include="Client\ProgressiveItem.cs" />
-    <Compile Include="Enums\Manipulator.cs" />
-    <Compile Include="Extensions\ControllerExtensions.cs" />
-    <Compile Include="Extensions\JsonNetExtensions.cs" />
-    <Compile Include="Extensions\TagBuilderExtensions.cs" />
+    <Compile Include="UX\ProgressiveForm.cs" />
+    <Compile Include="UX\ProgressiveItem.cs" />
+    <Compile Include="UX\ProgressiveManipulator.cs" />
+    <Compile Include="Data\ControllerExtensions.cs" />
+    <Compile Include="Data\JsonNetExtensions.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
-    <Compile Include="Helpers\JsonNetResult.cs" />
-    <Compile Include="Server\AlertMessage.cs" />
-    <Compile Include="Client\Callback.cs" />
-    <Compile Include="Enums\ProgressiveStatusCode.cs" />
-    <Compile Include="Enums\MessageStatus.cs" />
-    <Compile Include="Server\ProgressiveCommand.cs" />
-    <Compile Include="Server\ProgressiveMainResponse.cs" />
-    <Compile Include="Server\ProgressiveResponse.cs" />
-    <Compile Include="Server\ProgressiveResponseItem.cs" />
-    <Compile Include="Server\ProgressiveResult.cs" />
-    <Compile Include="JsonNetSerializer.cs" />
+    <Compile Include="Data\JsonNetResult.cs" />
+    <Compile Include="UX\ProgressiveAlert.cs" />
+    <Compile Include="UX\ProgressiveCallback.cs" />
+    <Compile Include="UX\ProgressiveStatus.cs" />
+    <Compile Include="Data\ProgressiveCommand.cs" />
+    <Compile Include="Data\ProgressiveMainResponse.cs" />
+    <Compile Include="Data\ProgressiveResponse.cs" />
+    <Compile Include="Data\ProgressiveResponseItem.cs" />
+    <Compile Include="Data\ProgressiveResult.cs" />
+    <Compile Include="UX\JsonNetSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

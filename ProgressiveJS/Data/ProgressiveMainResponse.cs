@@ -1,7 +1,7 @@
-﻿using ProgressiveJS.Enums;
+﻿using ProgressiveJS.UX;
 using ProgressiveJS.Helpers;
 
-namespace ProgressiveJS.Server
+namespace ProgressiveJS.Data
 {
     /// <summary>
     /// An encapsulation of json response from an ajax call.
@@ -25,7 +25,7 @@ namespace ProgressiveJS.Server
         /// </summary>
         public ProgressiveStatus Status { get; set; }
 
-        public ProgressiveMainResponse(string message = "", Manipulator manipulator = ProgressiveJS.Enums.Manipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
+        public ProgressiveMainResponse(string message = "", ProgressiveManipulator manipulator = ProgressiveManipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
         {
             Message = message;
             Manipulator = EnumHelper.GetDescription(manipulator);

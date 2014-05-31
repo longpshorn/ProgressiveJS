@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
-namespace ProgressiveJS.Client
+namespace ProgressiveJS.UX
 {
-    public class Callback
+    public class ProgressiveCallback
     {
         /// <summary>
         /// The function handle to be called.

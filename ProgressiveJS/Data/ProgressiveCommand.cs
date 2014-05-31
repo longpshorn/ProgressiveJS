@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ProgressiveJS.Server
+namespace ProgressiveJS.Data
 {
     public class ProgressiveCommand
     {

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 
-namespace ProgressiveJS.Client
+namespace ProgressiveJS.UX
 {
     public class ProgressiveItem : JsonNetSerializer
     {
@@ -61,7 +61,7 @@ namespace ProgressiveJS.Client
         /// <summary>
         /// A list of callbacks that should be called after the form has completed its submission.
         /// </summary>
-        public List<Callback> Callbacks { get; set; }
+        public List<ProgressiveCallback> Callbacks { get; set; }
 
         public ProgressiveItem(
             string url,
@@ -78,7 +78,7 @@ namespace ProgressiveJS.Client
             _type = type.ToString().ToLower();
             EventType = eventType;
             AdditionalFields = additionalFields != null ? additionalFields.Replace(" ", string.Empty) : null;
-            Callbacks = new List<Callback>();
+            Callbacks = new List<ProgressiveCallback>();
         }
 
         public ProgressiveItem AddAdditionalField(string selector)
@@ -92,7 +92,7 @@ namespace ProgressiveJS.Client
         public ProgressiveItem AddCallBack(string handle, params object[] param)
         {
             Callbacks.Add(
-                new Callback
+                new ProgressiveCallback
                 {
                     Parameters = new List<object>(param),
                     Handle = handle

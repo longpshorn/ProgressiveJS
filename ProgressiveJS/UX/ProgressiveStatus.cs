@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Web;
 
-namespace ProgressiveJS.Enums
+namespace ProgressiveJS.UX
 {
-    public enum MessageStatus
+    public enum ProgressiveStatus
     {
         [Description("default")]
         Default = 0,
@@ -18,6 +18,9 @@ namespace ProgressiveJS.Enums
         Warning = 2,
 
         [Description("error")]
-        Error = 3
+        Error = 3,
+
+        [Description("redirect")]
+        Redirect = 4
     }
 }

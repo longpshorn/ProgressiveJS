@@ -1,29 +1,29 @@
-﻿using ProgressiveJS.Enums;
-using ProgressiveJS.Helpers;
+﻿using ProgressiveJS.Helpers;
+using ProgressiveJS.UX;
 using System.Collections.Generic;
 
-namespace ProgressiveJS.Server
+namespace ProgressiveJS.Data
 {
     public class ProgressiveResult : JsonNetResult
     {
-        public ProgressiveResult(string message = "", Manipulator manipulator = Manipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
+        public ProgressiveResult(string message = "", ProgressiveManipulator manipulator = ProgressiveManipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
         {
             Data = new ProgressiveResponse(message, manipulator, status);
         }
 
         public ProgressiveResult Attr(string selector, string attr, string value)
         {
-            return AddItem(selector, new List<object> { attr, value }, Manipulator.Attr);
+            return AddItem(selector, new List<object> { attr, value }, ProgressiveManipulator.Attr);
         }
 
         public ProgressiveResult After(string selector, string content)
         {
-            return AddContent(selector, content, Manipulator.After);
+            return AddContent(selector, content, ProgressiveManipulator.After);
         }
 
         public ProgressiveResult Before(string selector, string content)
         {
-            return AddContent(selector, content, Manipulator.Before);
+            return AddContent(selector, content, ProgressiveManipulator.Before);
         }
 
         public ProgressiveResult Html(string selector, string html)
@@ -33,35 +33,35 @@ namespace ProgressiveJS.Server
 
         public ProgressiveResult Refresh(string selector, string attr)
         {
-            return AddContent(selector, attr, Manipulator.Refresh);
+            return AddContent(selector, attr, ProgressiveManipulator.Refresh);
         }
 
         public ProgressiveResult RemoveAttr(string selector, string attr)
         {
-            return AddContent(selector, attr, Manipulator.RemoveAttr);
+            return AddContent(selector, attr, ProgressiveManipulator.RemoveAttr);
         }
 
         public ProgressiveResult ReplaceWith(string selector, string content)
         {
-            return AddContent(selector, content, Manipulator.ReplaceWith);
+            return AddContent(selector, content, ProgressiveManipulator.ReplaceWith);
         }
 
         public ProgressiveResult SetValue(string key, object value)
         {
-            return AddContent("#" + key, value, Manipulator.Refresh);
+            return AddContent("#" + key, value, ProgressiveManipulator.Refresh);
         }
 
         public ProgressiveResult Text(string selector, string text)
         {
-            return AddContent(selector, text, Manipulator.Text);
+            return AddContent(selector, text, ProgressiveManipulator.Text);
         }
 
-        public ProgressiveResult AddContent(string selector, object content, Manipulator manipulator = Manipulator.Html)
+        public ProgressiveResult AddContent(string selector, object content, ProgressiveManipulator manipulator = ProgressiveManipulator.Html)
         {
             return AddItem(selector, new List<object> { content }, manipulator);
         }
 
-        public ProgressiveResult AddItem(string selector = ".pjs-response", List<object> args = null, Manipulator manipulator = Manipulator.Html)
+        public ProgressiveResult AddItem(string selector = ".pjs-response", List<object> args = null, ProgressiveManipulator manipulator = ProgressiveManipulator.Html)
         {
             var data = Data as ProgressiveResponse;
             if (data != null)
@@ -69,7 +69,7 @@ namespace ProgressiveJS.Server
             return this;
         }
 
-        public ProgressiveResult SetMessage(string message = "", Manipulator manipulator = Manipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
+        public ProgressiveResult SetMessage(string message = "", ProgressiveManipulator manipulator = ProgressiveManipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
         {
             var data = Data as ProgressiveResponse;
             if (data != null)

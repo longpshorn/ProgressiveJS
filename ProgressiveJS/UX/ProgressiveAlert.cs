@@ -1,27 +1,26 @@
-﻿using ProgressiveJS.Enums;
-using ProgressiveJS.Helpers;
+﻿using ProgressiveJS.Helpers;
 using System.Web.Mvc;
 
-namespace ProgressiveJS.Server
+namespace ProgressiveJS.UX
 {
-    public class AlertMessage
+    public class ProgressiveAlert
     {
         private readonly string _alertClass;
 
-        public AlertMessage(TempDataDictionary tempData)
-            : this(tempData["pjs-message"], tempData["pjs-status"])
+        public ProgressiveAlert(TempDataDictionary tempData)
+            : this(tempData["pjs-alert-message"], tempData["pjs-alert-status"])
         {
         }
 
-        public AlertMessage(object message = null, object status = null)
+        public ProgressiveAlert(object message = null, object status = null)
             : this(
                 message != null ? message.ToString() : string.Empty,
-                status != null ? (MessageStatus)status : MessageStatus.Error
+                status != null ? (ProgressiveStatus)status : ProgressiveStatus.Error
             )
         {
         }
 
-        public AlertMessage(string message = null, MessageStatus status = MessageStatus.Default)
+        public ProgressiveAlert(string message = null, ProgressiveStatus status = ProgressiveStatus.Default)
         {
             Message = message;
             Status = status;
@@ -30,7 +29,7 @@ namespace ProgressiveJS.Server
 
         public string Message { get; set; }
 
-        public MessageStatus Status { get; set; }
+        public ProgressiveStatus Status { get; set; }
 
         public MvcHtmlString Render()
         {
@@ -53,7 +52,7 @@ namespace ProgressiveJS.Server
 
         public static MvcHtmlString Render(TempDataDictionary tempData)
         {
-            return (new AlertMessage(tempData)).Render();
+            return (new ProgressiveAlert(tempData)).Render();
         }
     }
 }

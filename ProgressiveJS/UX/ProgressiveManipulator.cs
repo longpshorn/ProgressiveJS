@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace ProgressiveJS.Enums
+namespace ProgressiveJS.UX
 {
-    public enum Manipulator
+    public enum ProgressiveManipulator
     {
         [Description("after")]
         After,

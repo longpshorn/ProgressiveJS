@@ -5,7 +5,7 @@ using System;
 using System.Text;
 using System.Web.Mvc;
 
-namespace ProgressiveJS.Helpers
+namespace ProgressiveJS.Data
 {
     public class JsonNetResult : ActionResult
     {

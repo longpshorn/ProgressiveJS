@@ -4,7 +4,7 @@ using Newtonsoft.Json.Serialization;
 using System.IO;
 using System.Text;
 
-namespace ProgressiveJS
+namespace ProgressiveJS.UX
 {
     public abstract class JsonNetSerializer
     {

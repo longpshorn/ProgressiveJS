@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ProgressiveJS.Client
+namespace ProgressiveJS.UX
 {
     public class ProgressiveForm : JsonNetSerializer
     {
@@ -44,7 +44,7 @@ namespace ProgressiveJS.Client
         /// <summary>
         /// A list of callbacks that should be called after the form has completed its submission.
         /// </summary>
-        public List<Callback> Callbacks { get; set; }
+        public List<ProgressiveCallback> Callbacks { get; set; }
 
         public ProgressiveForm(
             string target = ".pjs-response",
@@ -61,7 +61,7 @@ namespace ProgressiveJS.Client
             ClearForm = clearForm;
             LocationOnSuccess = locationOnSuccess;
             AdditionalFields = additionalFields != null ? additionalFields.Replace(" ", string.Empty) : null;
-            Callbacks = new List<Callback>();
+            Callbacks = new List<ProgressiveCallback>();
         }
 
         public ProgressiveForm AddAdditionalField(string selector)
@@ -75,7 +75,7 @@ namespace ProgressiveJS.Client
         public ProgressiveForm AddCallBack(string handle, params object[] param)
         {
             Callbacks.Add(
-                new Callback
+                new ProgressiveCallback
                 {
                     Parameters = new List<object>(param),
                     Handle = handle

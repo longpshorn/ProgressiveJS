@@ -1,27 +1,26 @@
-﻿using ProgressiveJS.Enums;
-using ProgressiveJS.Server;
+﻿using ProgressiveJS.UX;
 using System.IO;
 using System.Web.Mvc;
 
-namespace ProgressiveJS.Extensions
+namespace ProgressiveJS.Data
 {
     public static class ControllerExtensions
     {
-        #region RenderAlert
-        public static void SetAlertData(this Controller controller, MessageStatus status, string successMessage, string errorMessage)
+        #region RenderProgressiveAlert
+        public static void SetProgressiveAlertData(this Controller controller, ProgressiveStatus status, string successMessage, string errorMessage)
         {
-            controller.SetAlertData(
+            controller.SetProgressiveAlertData(
                 status,
-                status.Equals(MessageStatus.Default) || status.Equals(MessageStatus.Success)
+                status.Equals(ProgressiveStatus.Default) || status.Equals(ProgressiveStatus.Success)
                     ? successMessage
                     : errorMessage
             );
         }
 
-        public static void SetAlertData(this Controller controller, MessageStatus status, string message)
+        public static void SetProgressiveAlertData(this Controller controller, ProgressiveStatus status, string message)
         {
-            controller.TempData["pjs-status"] = status;
-            controller.TempData["pjs-message"] = message;
+            controller.TempData["pjs-alert-status"] = status;
+            controller.TempData["pjs-alert-message"] = message;
         }
 
         /// <summary>
@@ -35,11 +34,11 @@ namespace ProgressiveJS.Extensions
         /// A rendering of the _ProgressiveAlert partial view that makes use of the TempData dictionary to provide a
         /// modularized alert style message to users.
         /// </returns>
-        public static string RenderAlert(this Controller controller, MessageStatus status, string successMessage, string errorMessage)
+        public static string RenderProgressiveAlert(this Controller controller, ProgressiveStatus status, string successMessage, string errorMessage)
         {
-            return controller.RenderAlert(
+            return controller.RenderProgressiveAlert(
                 status,
-                status.Equals(MessageStatus.Default) || status.Equals(MessageStatus.Success)
+                status.Equals(ProgressiveStatus.Default) || status.Equals(ProgressiveStatus.Success)
                     ? successMessage
                     : errorMessage
             );
@@ -55,12 +54,12 @@ namespace ProgressiveJS.Extensions
         /// A rendering of the _ProgressiveAlert partial view that makes use of the TempData dictionary to provide a
         /// modularized alert style message to users.
         /// </returns>
-        public static string RenderAlert(this Controller controller, MessageStatus status, string message)
+        public static string RenderProgressiveAlert(this Controller controller, ProgressiveStatus status, string message)
         {
             if (!controller.Request.IsAjaxRequest())
-                controller.SetAlertData(status, message);
+                controller.SetProgressiveAlertData(status, message);
 
-            return (new AlertMessage(message, status)).Render().ToString();
+            return (new ProgressiveAlert(message, status)).Render().ToString();
         }
         #endregion
 

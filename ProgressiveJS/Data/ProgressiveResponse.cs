@@ -1,7 +1,7 @@
-﻿using ProgressiveJS.Enums;
+﻿using ProgressiveJS.UX;
 using System.Collections.Generic;
 
-namespace ProgressiveJS.Server
+namespace ProgressiveJS.Data
 {
     public class ProgressiveResponse
     {
@@ -25,7 +25,7 @@ namespace ProgressiveJS.Server
         /// </summary>
         public ProgressiveStatus StatusCode { get; set; }
 
-        public ProgressiveResponse(string message = "", Manipulator manipulator = Manipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
+        public ProgressiveResponse(string message = "", ProgressiveManipulator manipulator = ProgressiveManipulator.Html, ProgressiveStatus status = ProgressiveStatus.Default)
         {
             MainResponse = new ProgressiveMainResponse(message, manipulator, status);
             Items = new List<ProgressiveResponseItem>();
