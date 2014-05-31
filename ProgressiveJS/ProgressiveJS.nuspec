@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/longpshorn/ProgressiveJS/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/longpshorn/ProgressiveJS</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/longpshorn/ProgressiveJS/master/progressiveJs.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release. Basic functionality for testing purposes.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>ajax javascript</tags>
+  </metadata>
+</package>
