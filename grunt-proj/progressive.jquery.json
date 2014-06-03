@@ -1,0 +1,25 @@
+{
+  "name": "progressive",
+  "title": "progressive",
+  "description": "A library to simplify the creation of progressively enhanced ajax web applications.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/longpshorn/ProgressiveJS",
+  "author": {
+    "name": "Patrick Smith"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/longpshorn/ProgressiveJS"
+  },
+  "bugs": "https://github.com/longpshorn/ProgressiveJS/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/longpshorn/ProgressiveJS/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "1.11"
+  },
+  "keywords": []
+}
