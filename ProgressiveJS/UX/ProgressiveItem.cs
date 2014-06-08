@@ -100,5 +100,10 @@ namespace ProgressiveJS.UX
             );
             return this;
         }
+
+        public override string ToString()
+        {
+            return ToJson();
+        }
     }
 }
